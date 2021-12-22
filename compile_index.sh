@@ -17,8 +17,10 @@ cd ..
 
 jupyter nbconvert --to html --output-dir $OUTPUT_PATH/ $JUPYTER_FOLDER/*.ipynb
 
+echo -e "\n" >> index.md
 for notebook in $OUTPUT_PATH/*.html
 
 do
-  echo "$notebook" | tee -a index.md
+  echo "https://jorlev.github.io/present-myself-site/$notebook" | tee -a index.md
+  echo -e "\n" >> index.md
 done
